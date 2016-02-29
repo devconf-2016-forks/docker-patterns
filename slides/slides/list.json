@@ -1,0 +1,30 @@
+[
+  "title-red.html",
+
+  "docker-title.html",
+  "docker-vm-vs-container.html",
+
+  "patterns-title.html",
+  "patterns-1-intro.html",
+  "patterns-2-pattern-language.html",
+  "patterns-3-oop-design-patterns.html",
+  "patterns-4-eai-patterns.html",
+  "patterns-5-eai-schema.html",
+  "patterns-5-structure.html",
+
+  "config-0-title.html",
+  "config-1-overview.html",
+  "config-2.0-envvar.html",
+  "config-2.1-envvar-example.html",
+  "config-3-config-container.html",
+  "config-4-config-lookup.html",
+
+  "discovery-0-title.html",
+  "discovery-1-overview.html",
+  "discovery-2-lookup.html",
+  "discovery-3-dns.html",
+  "discovery-4-envvar.html",
+
+  "wrap-up.html",
+  "questions-red.html"
+]
