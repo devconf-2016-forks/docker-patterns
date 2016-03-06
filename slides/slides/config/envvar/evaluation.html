@@ -1,8 +1,9 @@
+<h1 style="display: none">Using Variables</h1>
 <h1>Evaluation</h1>
 
 <ul>
-  <li>In Java: <code style="color: #4C90C3">System.getenv()</code></li>
-  <li>Environment "profiles"
+  <li class="fragment"><code>System.getenv()</code></li>
+  <li class="fragment">Environment "profiles"
     <ul>
       <li>Predefined profiles</li>
       <li>EnvVar selects profile</li>
@@ -10,6 +11,7 @@
   </li>
 </ul>
 
+<div class="fragment">
 <pre><code class="yaml" style="font-size: 90%; padding: 5px 20px;
                                float: left; margin-left: 0%; margin-right: 5%">spring:
     profiles: dev
@@ -26,3 +28,4 @@ server:
   -e SPRING_PROFILES_ACTIVE=dev \
   my-springboot-app
 </code></pre>
+</div>

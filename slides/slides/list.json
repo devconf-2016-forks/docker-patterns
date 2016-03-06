@@ -25,6 +25,7 @@
     "config/envvar/kubernetes.html",
     "config/envvar/compose.html",
     "config/envvar/evaluation.html",
+    "demo.html",
     "config/envvar/conclusion.html"
   ],
   [

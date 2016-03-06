@@ -1,5 +1,7 @@
 
-# A Pattern Language
+# Patterns
+
+## A Pattern Language
 
 * Late 1960s Christoper Alexander developed a "Pattern concept" for architecture
 * Famous book: "A Pattern Language" (1977)
@@ -11,11 +13,12 @@
   - Develops a common "language" for enhancing communication
   - Provides solution to common problems for unexperienced developers / architects
 * Fixed structure:
+  - Name
   - Context
   - Problem
   - Generic Solution
 
-# GoF
+## GoF
 
 * 1994
 * Reusable Patterns in Object Oriented Software
@@ -25,9 +28,14 @@
   - Factory
 * Fine granular format
 
-# EAI Patterns
+## EAI Patterns
 
-*
+* Example for applying patterns
+* Graphical Name
+
+## Structure
+
+* Close to "Recipes"
 
 # Configuration
 
