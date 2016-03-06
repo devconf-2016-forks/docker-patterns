@@ -1,0 +1,16 @@
+<h1>docker compose</h1>
+
+<pre><code class="yaml">---
+version: '2'
+services:
+  web:
+    depends_on:
+      - db
+    environment:
+      DB_USER: "dbuser"
+      DB_PASS:
+  db:
+    image: "orchardup/mysql"
+    environment:
+      MYSQL_DATABASE: "wordpress"
+</code></pre>
