@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Docker for Java Developers</title>
+  <title>Docker Patterns</title>
 
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -100,7 +100,7 @@
 <script src="bower_components/reveal.js/js/reveal.js"></script>
 <script>
 
-  var activateTerminal = false;
+  var activateTerminal = true;
 
   // Configure Reveal
   // Full list of configuration options available here:
@@ -114,56 +114,75 @@
     theme:      Reveal.getQueryHash().theme, // available themes are in /css/theme
     transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
 
+    menu: {
+      themes:     false,
+      keyboard:   true,
+      openButton: false,
+//      hideMissingTitles: true,
+
+      custom: [
+        {title: 'Links', icon: '<i class="fa fa-external-link">', src: 'slides/links.html'},
+      ]
+    },
+
     // Optional libraries used to extend on reveal.js
-    dependencies: [
-      {
-        src: 'bower_components/reveal.js/lib/js/classList.js', condition: function () {
-        return !document.body.classList;
-      }
-      },
-      {
-        src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function () {
-        return !!document.querySelector('[data-markdown]');
-      }
-      },
-      {
-        src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function () {
-        return !!document.querySelector('[data-markdown]');
-      }
-      },
-      {
-        src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () {
-        hljs.initHighlightingOnLoad();
-      }
-      },
-      {
-        src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function () {
-        return !!document.body.classList;
-      }
-      },
+    dependencies:
+        [
+          {
+            src: 'bower_components/reveal.js/lib/js/classList.js',
+            condition: function () {
+              return !document.body.classList;
+            }
+          },
+          {
+            src: 'bower_components/reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad();
+            }
+          },
+          {
+            src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function () {
+              return !!document.body.classList;
+            }
+          },
       // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
       //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 
-      {
-        src: 'js/loadhtmlslides.js', condition: function () {
-        return !!document.querySelector('[data-html]');
-      }
-      }
+          {
+            src: 'js/loadhtmlslides.js',
+            condition: function () {
+              return !!document.querySelector('[data-html]');
+            }
+          },
+          {
+            src: 'bower_components/reveal.js-menu/menu.js'
+          }
     ]
   });
 
-  Reveal.addEventListener( 'slidechanged', function( event ) {
-    var current = event.currentSlide;
-    if (activateTerminal) {
-      var iframe = current.querySelector(".demo iframe");
-      if (iframe) {
-        setTimeout(function () {
-          iframe.contentWindow.focus();
-        }, 100);
+  (function() {
+
+    var isOverview = false;
+
+    Reveal.addEventListener('slidechanged', function (event) {
+      var current = event.currentSlide;
+      if (!isOverview && activateTerminal) {
+        var iframe = current.querySelector("iframe.demo");
+        if (iframe) {
+          setTimeout(function () {
+            iframe.contentWindow.focus();
+          }, 100);
+        }
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       }
-      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-    }
-} );
+    });
+
+    Reveal.addEventListener('overviewshown', function() { isOverview = true; });
+    Reveal.addEventListener('overviewhidden', function() { isOverview = false; });
+  })();
 </script>
 
 <script>
@@ -172,32 +191,25 @@
     return "http://" + match[1] + ":57575/";
   }
 
+  // Setup slides with demos ....
   function demo(event) {
     var section = event.currentSlide || event;
     var demo = section.getElementsByClassName('demo')[0];
     if (demo) {
+      //var slide = document.querySelector("div.reveal div.slides");
+      //slide.style.width='1280px';
       demo.src = getButterflyUrl();
-      // Calculate size of iFrame. Up to now this should be done
-      // individually based on the CSS used. I really would LOVE to
-      // get a generic solution to set the width/height to always 80%.
-      // Let me know if you have an idea how to do that !
-      demo.style.height =
-          section.offsetHeight
-          + 200
-          - demo.offsetTop
-          + 'px';
-      demo.style.width =
-          section.offsetWidth
-          - demo.offsetLeft
-          - 100
-          + Math.round(0.10 * section.offsetWidth)
-          + 'px';
-      // demo.style.marginLeft = "-10%";
-      demo.style.paddingTop = "10px";
+
+      // We try some default, but please overwrite them via localStorage if required
+      demo.style.height = localStorage.getItem("height") || "586px";
+      demo.style.width = localStorage.getItem("width") || "110%";
+      demo.style.marginLeft = localStorage.getItem("marginLeft") || "-100px";
+      if (localStorage.get("paddingTop")) {
+        demo.style.paddingTop = localStorage.get("paddingTop");
+      }
     }
-    console.log('Slide ' + event.indexh + ': section.offsetHeight: ' + section.offsetHeight +
-                ', demo.offsetTop: ' + (demo ? demo.offsetTop : 'no demo'));
   }
+
   Reveal.addEventListener( 'slidechanged', demo );
   Reveal.addEventListener( 'ready', demo );
 </script>

@@ -8,5 +8,5 @@ docker --tlsverify=false run -it --rm \
       -e MAVEN_OPTS="-Ddocker.host.address=172.17.42.1" \
       -e JAVA_HOME="/usr/lib/jvm/default-jvm/" \
       -p 9000:9000 -p 57575:57575 -p 35729:35729 \
-      rhuss/talk-redhat-msa-day:london-2015 $*
+      rhuss/talk-docker-pattern:javaland2016 $*
 

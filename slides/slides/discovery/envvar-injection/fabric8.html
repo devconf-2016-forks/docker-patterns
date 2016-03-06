@@ -1,0 +1,22 @@
+<h1>ENV-VAR CDI</h1>
+
+<ul>
+  <li>fabric8 CDI extension for EnvVars:</li>
+</ul>
+
+<pre><code class="java" style="font-size: 80%">@Factory
+@ServiceName
+public DataSource create(@ServiceName
+                         @Protocol("jdbc:mysql")
+                         @Path("db")
+                         String url) {
+    MysqlDataSource mysqlDS = new MysqlDataSource();
+    mysqlDS.setUrl(url);
+    mysqlDS.setUser(System.getProperty(USERNAME, "root"));
+    mysqlDS.setPassword(System.getProperty(PASSWORD, "pass"));
+    return mysqlDS;
+}</code></pre>
+
+<pre><code class="java" style="font-size: 80%; margin-top: 30px">@ServiceName("dev-mysql")
+DataSource mySqlD;
+</code></pre>

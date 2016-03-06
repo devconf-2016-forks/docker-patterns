@@ -1,0 +1,12 @@
+<h1>Docker Args</h1>
+
+<ul>
+  <li>Dockerofile variables</li>
+  <li>Filled in during runtime</li>
+</ul>
+<pre><code class="dockerfile">FROM busybox
+ARG uid
+USER ${uid:-jboss}
+# ...
+</code></pre>
+<pre><code class="dockerfile" style="margin-top: 50px">docker run --build-arg uid=daemon ....</code></pre>

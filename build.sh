@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "Building rhuss/talk-redhat-msa-day:london-2015"
-docker --tlsverify=false build -t rhuss/talk-redhat-msa-day:london-2015 .
+echo "Building rhuss/talk-docker-pattern:javaland2016"
+docker --tlsverify=false build -t rhuss/talk-docker-pattern:javaland2016 .

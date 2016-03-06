@@ -55,10 +55,14 @@
 
   - Demos
     * https://github.com/victorlin/ansible-docker-demo
-    * 
-  
+    * https://opensolitude.com/2015/05/26/building-docker-images-with-ansible.html 
+    * http://www.ibm.com/developerworks/cloud/library/cl-provision-docker-containers-ansible/cl-provision-docker-containers-ansible-pdf.pdf
   
 * http://victorlin.me/posts/2014/08/11/building-docker-image-with-ansible
+
+## Packer
+
+* https://www.packer.io/docs/builders/docker.html
 
 ----
 
