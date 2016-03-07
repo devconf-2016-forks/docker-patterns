@@ -245,6 +245,38 @@
     <section>
       
       
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/envvar.html"></section>
+
+
+      
+      
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/kubernetes.html"></section>
+
+
+      
+      
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/kubernetes-example.html"></section>
+
+
+      
+      
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/fabric8.html"></section>
+
+
+      
+      
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/conclusion.html"></section>
+
+
+      
+    </section>
+    
+    
+    
+    
+    <section>
+      
+      
     <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/service-lookup/lookup.html"></section>
 
 
@@ -278,38 +310,6 @@
       
       
     <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/dynamic-dns/conclusion.html"></section>
-
-
-      
-    </section>
-    
-    
-    
-    
-    <section>
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/envvar.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/kubernetes.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/kubernetes-example.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/fabric8.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/discovery/envvar-injection/conclusion.html"></section>
 
 
       
@@ -412,17 +412,12 @@
     <section>
       
       
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/artifact-container/artifact.html"></section>
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/self-contained/self-contained.html"></section>
 
 
       
       
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/demo.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/artifact-container/conclusion.html"></section>
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/self-contained/conclusion.html"></section>
 
 
       
@@ -434,17 +429,12 @@
     <section>
       
       
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/self-contained/self-contained.html"></section>
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/artifact-container/artifact.html"></section>
 
 
       
       
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/demo.html"></section>
-
-
-      
-      
-    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/self-contained/conclusion.html"></section>
+    <section class="has-light-background" data-background-color="#f6f6f6" data-background-image="images/background.png" data-html="slides/build/artifact-container/conclusion.html"></section>
 
 
       
@@ -591,15 +581,20 @@
   (function() {
 
     var isOverview = false;
-
+    var timeOut = null;
     Reveal.addEventListener('slidechanged', function (event) {
       var current = event.currentSlide;
       if (!isOverview && activateTerminal) {
         var iframe = current.querySelector("iframe.demo");
         if (iframe) {
-          setTimeout(function () {
+          timeOut = setTimeout(function () {
+            // TODO: Maybe highlight frame when he gets focus
             iframe.contentWindow.focus();
-          }, 100);
+            timeOut = null;
+          }, 1500);
+        } else if (timeOut) {
+          clearTimeout(timeOut);
+          timeOut = null;
         }
         // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       }

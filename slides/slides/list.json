@@ -44,6 +44,13 @@
     "discovery/overview.html"
   ],
   [
+    "discovery/envvar-injection/envvar.html",
+    "discovery/envvar-injection/kubernetes.html",
+    "discovery/envvar-injection/kubernetes-example.html",
+    "discovery/envvar-injection/fabric8.html",
+    "discovery/envvar-injection/conclusion.html"
+  ],
+  [
     "discovery/service-lookup/lookup.html",
     "discovery/service-lookup/conclusion.html"
   ],
@@ -52,13 +59,6 @@
     "discovery/dynamic-dns/example-jndi.html",
     "discovery/dynamic-dns/example-spotify.html",
     "discovery/dynamic-dns/conclusion.html"
-  ],
-  [
-    "discovery/envvar-injection/envvar.html",
-    "discovery/envvar-injection/kubernetes.html",
-    "discovery/envvar-injection/kubernetes-example.html",
-    "discovery/envvar-injection/fabric8.html",
-    "discovery/envvar-injection/conclusion.html"
   ],
   [
     "build/title.html",
@@ -81,14 +81,12 @@
     "build/image-factory/conclusion.html"
   ],
   [
-    "build/artifact-container/artifact.html",
-    "demo.html",
-    "build/artifact-container/conclusion.html"
+    "build/self-contained/self-contained.html",
+    "build/self-contained/conclusion.html"
   ],
   [
-    "build/self-contained/self-contained.html",
-    "demo.html",
-    "build/self-contained/conclusion.html"
+    "build/artifact-container/artifact.html",
+    "build/artifact-container/conclusion.html"
   ],
   [
     "build/build-integration/build-integration.html"

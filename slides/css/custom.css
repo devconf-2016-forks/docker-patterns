@@ -34,6 +34,7 @@ div.problem {
     padding: 0.3em;
     margin: 1.0em 0em;
     text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 span.highlight {

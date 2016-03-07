@@ -7,7 +7,7 @@ DnsSrvResolver resolver =
                    .cachingLookups(true)
                    .retainingDataOnFailures(true)
                    .dnsLookupTimeoutMillis(1000)
-                   .build()
+                   .build();
 
 List&lt;LookupResult&gt; nodes =
     resolver.resolve(

@@ -166,15 +166,20 @@
   (function() {
 
     var isOverview = false;
-
+    var timeOut = null;
     Reveal.addEventListener('slidechanged', function (event) {
       var current = event.currentSlide;
       if (!isOverview && activateTerminal) {
         var iframe = current.querySelector("iframe.demo");
         if (iframe) {
-          setTimeout(function () {
+          timeOut = setTimeout(function () {
+            // TODO: Maybe highlight frame when he gets focus
             iframe.contentWindow.focus();
-          }, 100);
+            timeOut = null;
+          }, 1500);
+        } else if (timeOut) {
+          clearTimeout(timeOut);
+          timeOut = null;
         }
         // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       }
