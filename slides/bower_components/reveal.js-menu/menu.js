@@ -309,6 +309,9 @@ var RevealMenu = window.RevealMenu || (function(){
 				var link = '/#/' + h;
 				if (typeof v === 'number' && !isNaN( v )) link += '/' + v;
 
+				if ($('.menu-title.category',section).text()) {
+					type += ' menu-category';
+				}
 				var title = $(section).data('menu-title') ||
 					$('.menu-title', section).text() ||
 					$('h1, h2, h3, h4, h5, h6', section).text();

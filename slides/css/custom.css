@@ -139,3 +139,8 @@ iframe.demo {
     -moz-box-shadow: 10px -7px 36px 3px rgba(0,0,0,0.75);
     box-shadow: 10px -7px 36px 3px rgba(0,0,0,0.75);
 }
+
+.menu-category {
+/*    font-weight: bold !important; */
+    background-color: #3C3C3C;
+}
