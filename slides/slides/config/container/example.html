@@ -2,8 +2,8 @@
 <h3>Config Dockerfile</h3>
 <pre><code class="dockerfile">FROM busybox
 
-VOLUME "/usr/local/tomcat/conf"
 ADD "dev_conf" "/usr/local/tomcat/conf"
+VOLUME "/usr/local/tomcat/conf"
 </code></pre>
 
 <h3 style="margin-top: 5%">Create container</h3>
