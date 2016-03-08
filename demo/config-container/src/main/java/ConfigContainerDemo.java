@@ -22,5 +22,5 @@ public class ConfigContainerDemo extends HttpServlet {
         Properties props = new Properties();
         props.load(new FileInputStream("/config/demo.properties"));
         return props;
-    }
+	    }
 }
