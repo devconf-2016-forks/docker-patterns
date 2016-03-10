@@ -1,7 +1,7 @@
 # Docker Pattern - JavaLand 2016
 
 
-This is image is contains the slides for the presentation "Docker Pattern" which is based on [rhuss/docker-reveal](https://github.com/rhuss/docker-reveal) image
+This contains the slides for the presentation "Docker Pattern" which is based on [rhuss/docker-reveal](https://github.com/rhuss/docker-reveal) image
 
 It includes a HTML5 Terminal emulation which can be used from within the browser (look for slides named "Demo"). The demo can be find below `/demo` where each directory contains its own README.
 
@@ -18,4 +18,4 @@ With this startup script the presentation is then available at `http://docker_ho
 
 When watching the presentation you can use `m` for getting a Menu for directly navigating to individual slides. There you will also find section **Links** which useful links to additional information.
 
-Have fun (and feel free to open issues in case of questions or suggestions).
+Have fun (and feel free to open [issues](https://github.com/rhuss/docker-patterns-2016-javaland/issues) in case of questions or suggestions).
