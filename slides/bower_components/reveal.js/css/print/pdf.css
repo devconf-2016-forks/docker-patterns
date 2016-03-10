@@ -31,12 +31,17 @@ html {
 .reveal.overview,
 .fork-reveal,
 .share-reveal,
-.state-background {
+.state-background,
+.demo {
 	display: none !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	text-shadow: 0 0 0 #000 !important;
+}
+
+h1.chapter {
+	margin-top: 0px !important;
 }
 
 .reveal pre code {
